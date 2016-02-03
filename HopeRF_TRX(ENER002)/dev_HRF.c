@@ -177,6 +177,43 @@ void HRF_send_OOK_msg(uint8_t relayState)
 		buf[15] = 0x8E;		// D0-l, D1-h		// S2 off
 		buf[16] = 0xE8;		// D2-h, D3-l
 	}
+  // States 4 to end provided by @PRich13 on GitHub
+	if (relayState == 4)
+	{
+		printf("Socket 3 ON\n\n");
+		buf[15] = 0xE8; // D0-h, D1-l // S3 on
+		buf[16] = 0xEE; // D2-h, D3-h
+	}
+	if (relayState == 5)
+	{
+		printf("Socket 3 OFF\n\n");
+		buf[15] = 0xE8; // D0-h, D1-l // S3 off
+		buf[16] = 0xE8; // D2-h, D3-l
+	}
+	if (relayState == 6)
+	{
+		printf("Socket 4 ON\n\n");
+		buf[15] = 0x88; // D0-l, D1-l // S4 on
+		buf[16] = 0xEE; // D2-h, D3-h
+	}
+	if (relayState == 7)
+	{
+		printf("Socket 4 OFF\n\n");
+		buf[15] = 0x88; // D0-l, D1-l // S4 off
+		buf[16] = 0xE8; // D2-h, D3-l
+	}
+	if (relayState == 8)
+	{
+		printf("All Sockets ON\n\n");
+		buf[15] = 0xEE; // D0-h, D1-h // All on
+		buf[16] = 0x8E; // D2-l, D3-h
+	}
+	if (relayState == 9)
+	{
+		printf("All Sockets OFF\n\n");
+		buf[15] = 0xEE; // D0-h, D1-h // All on
+		buf[16] = 0x88; // D2-l, D3-l
+	}
 	// END MAGIC LINES
 
 
