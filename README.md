@@ -4,5 +4,19 @@ The basics for the ENER314-RT - turn ENER002 dumb sockets on and off.
 Inspect the contents of the HopeRF_TRX(ENER002) folder. Each file has lines commented...
 Make a copy of the Energenie-issued HopeRF_TRX(ENER002) folder, overwrite app_main.c, dev_HRF.c & Makefile with the ones from this Git repo, and make away!
 
-You can try the 4 files in the binaries folder - these have worked for some people, but not for others *shrug*
-They'll need chmod +x * running on them.
+If you've already managed to pair your sockets, you can try the 4 files in the binaries folder. Download them into a folder, then navigate into that folder and run...
+
+```
+sudo chmod +x s*
+```
+
+...to make them executable, and test with...
+
+```
+./s1on && ./s1off && ./s2on && ./s2off
+```
+
+If that works copy or symlink them into /usr/local/bin to use them from anywhere on the system.
+
+## Sample Use Case
+I call the binaries from [Domoticz](http://www.domoticz.com), via a virtual switch which simply uses script://home/pi/s1on for the On command and script://home/pi/s1off for the off command. Domoticz is hooked up to iOS HomeKit apps via [eDomoticz and Homebridge](https://www.domoticz.com/forum/viewtopic.php?f=36&t=10272), which means I can then use "Hey Siri, turn the {name of domoticz virtual switch} on/off" to voice-control the energenie sockets.
