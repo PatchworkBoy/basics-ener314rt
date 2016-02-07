@@ -1,8 +1,9 @@
 # basics-ener314rt
 The basics for the ENER314-RT - turn ENER002 dumb sockets on and off.
 
-Inspect the contents of the HopeRF_TRX(ENER002) folder. Each file has lines commented...
-Make a copy of the Energenie-issued HopeRF_TRX(ENER002) folder, overwrite app_main.c, dev_HRF.c & Makefile with the ones from this Git repo, and make away!
+Inspect the contents of the HopeRF_TRX(ENER002) folder. Each file has lines commented... amend as necessary.
+
+Make a copy of the [Energenie-issued](https://energenie4u.co.uk/catalogue/download_software/ENER314-RT%20programs.zip) HopeRF_TRX(ENER002) folder (which in turn is inside the ENER002 folder), overwrite app_main.c, dev_HRF.c & Makefile with the ones from this Git repo, and make away!
 
 If you've already managed to pair your sockets, you can try the 4 files in the binaries folder. Download them into a folder, then navigate into that folder and run...
 
